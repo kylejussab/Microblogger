@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/css/reader-article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="/scripts/nav-button.js" defer></script>
+    <title>Microblogger: Reader Article Page</title>
+</head>
+
+<body>
+    <nav>
+        <p class="microblogger">Microblogger: Reader Article Page</p>
+        <img src="/assets/menu.png" class="menu-icon">
+
+        <div class="burger-menu hide-on-start" id="burger-menu">
+            <ul class="burger-list">
+                <li><a href="/author" class="nav-link">Author Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back button -->
+    <a href="/"><img src="/assets/arrow.png" class="back-button"></a>
+
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1 class="main-heading"><%= blog.title %></h1>
+            <div class="hero-subtitle-container">
+                <p class="hero-subtitle"><%= blog.subtitle %></p>
+                <hr class="hero-line">
+                <p class="hero-author">A blog by <%= blog.author %></p>
+            </div>
+        </div>
+        
+        <img src="/assets/hero-image.png" class="hero-image" alt="Image of a hand holding a controller">
+    </div>
+
+    <div class="content-container">
+        <div class="post-container">
+            <div class="title-author">
+                <div class="author-info">
+                    <img src="/assets/Icon_V2_Transparent.png" class="author-icon">
+                    <p class="author-name"><%= article.author %></p>
+                </div>
+
+                <div>
+                    <h3 class="article-title"><%= article.title %></h3>
+                    <p class="article-subtitle"><%= article.subtitle %></p>
+                </div>
+            </div>
+
+            <div class="date-likes">
+                <p><%= article.publish_date %></p>
+
+                <div class="likes">
+                    <a href="/article/<%= article.id %>/add-like"><img src="/assets/heart.png" class="heart-icon"></a>
+                    <p><%= article.likes %></p>
+                </div>
+            </div>
+
+            <hr class="heading-separator">
+
+            <div class="article-body">
+                <!-- Split the body given into paragraphs -->
+                <% article.body.split('\n').forEach(function(paragraph) { %>
+                    <p><%= paragraph %></p>
+                <% }); %>
+            </div>
+            
+            <hr class="heading-separator">
+            
+            <div class="error-container">
+            <% if(error){ %>
+                <p class="error"><%= error %></p>
+            <% } %>
+            </div>
+        
+            <form method="POST" action="/article/<%= article.id %>/add-comment">
+                <div>
+                    <textarea id="body" name="body" placeholder="Write a comment..."></textarea>
+                </div>
+        
+                <button type="submit">Add comment</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="comments-container">
+        <div class="comments">
+            <% comments.forEach(function(comment) { %>
+                    <div class="comment">
+                        <div class="comment-info">
+                            <img src="/assets/user.png" class="comment-icon">
+                            <p class="comment-name">Microblog Reader</p>
+                        </div>
+
+                        <p class="comment-body"><%= comment.body %></p>
+                        <p class="comment-date">Posted: <%= comment.create_date %></p>
+                    </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 <%= blog.author %>. All rights reserved.</p>
+        <p>Terms of Service | Privacy Policy | Contact Us</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/css/edit.css">
+    <title>Microblogger: New Draft</title>
+</head>
+
+<body>
+    <nav>
+        <p class="microblogger">Microblogger: New Article Page</p>
+    </nav>
+
+    <!-- Back button -->
+    <a href="/author"><img src="/assets/arrow.png" class="back-button"></a>
+
+    <h2>New Article</h2>
+
+    <div class="error-container">
+        <% if(error){ %>
+            <p class="error"><%= error %></p>
+        <% } %>
+    </div>
+
+    <div class="content-container">
+        <form method="POST" action="/author/new/create/">
+            <div class="title-subtitle">
+                <div class="input-container">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Article title"/>
+                </div>
+        
+                <div class="input-container">
+                    <label for="subtitle">Subtitle</label>
+                    <input type="text" id="subtitle" name="subtitle" placeholder="Article subtitle"/>
+                </div>
+            </div>
+            
+            <div class="body-container">
+                <label for="body">Text</label>
+                <div class="input-container article-body">
+                    <textarea id="body" name="body" placeholder="Start typing your article here"></textarea>
+                </div>
+            </div>
+            <button type="submit">Create</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 <%= blog.author %>. All rights reserved.</p>
+        <p>Terms of Service | Privacy Policy | Contact Us</p>
+    </footer>
+</body>
+</html>

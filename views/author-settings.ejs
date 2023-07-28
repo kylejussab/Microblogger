@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/css/author-settings.css">
+    <title>Microblogger: Author Settings</title>
+</head>
+
+<body>
+    <nav>
+        <p class="microblogger">Microblogger: Author Settings Page</p>
+    </nav>
+
+    <!-- Back button -->
+    <a href="/author"><img src="/assets/arrow.png" class="back-button"></a>
+
+    <h2>Author Settings</h2>
+
+    <div class="error-container">
+        <% if(error){ %>
+            <p class="error"><%= error %></p>
+        <% } %>
+    </div>
+
+    <div class="content-container">
+        <form method="POST" action="/author/settings/update">
+            <div class="title-subtitle">
+                <div class="input-container">
+                    <label for="title">Blog Title</label>
+                    <input type="text" id="title" name="title" value="<%= blog.title %>" />
+                </div>
+        
+                <div class="input-container">
+                    <label for="subtitle">Blog Subtitle</label>
+                    <input type="text" id="subtitle" name="subtitle" value="<%= blog.subtitle %>" />
+                </div>
+
+                <div class="input-container">
+                    <label for="author">Blog Author</label>
+                    <input type="text" id="author" name="author" value="<%= blog.author %>" />
+                </div>
+            </div>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 <%= blog.author %>. All rights reserved.</p>
+        <p>Terms of Service | Privacy Policy | Contact Us</p>
+    </footer>
+</body>
+</html>

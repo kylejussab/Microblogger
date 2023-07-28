@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/css/reader-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="/scripts/nav-button.js" defer></script>
+    <title>Microblogger: Reader Homepage</title>
+</head>
+
+<body>
+    <nav>
+        <p class="microblogger">Microblogger: Reader Homepage</p>
+        <img src="/assets/menu.png" class="menu-icon">
+
+        <div class="burger-menu hide-on-start" id="burger-menu">
+            <ul class="burger-list">
+                <li><a href="/author" class="nav-link">Author Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1 class="main-heading"><%= blog.title %></h1>
+            <div class="hero-subtitle-container">
+                <p class="hero-subtitle"><%= blog.subtitle %></p>
+                <hr class="hero-line">
+                <p class="hero-author">A blog by <%= blog.author %></p>
+            </div>
+            
+            
+        </div>
+        
+        <img src="/assets/hero-image.png" class="hero-image" alt="Image of a hand holding a controller">
+    </div>
+    
+    <h2 class="article-heading">Articles</h2>
+
+    <div class="main-container">
+        <% published.forEach(function(published) { %>
+            <a href="/article/<%= published.id %>"><div class="article-container">
+                <div class="article-content">
+                    <h3 class="article-title"><%= published.title %></h3>
+                    <hr>
+                    <p class="article-subtitle"><%= published.subtitle %></p>
+                </div>
+                
+                <div class="article-additional-container">
+                    <div class="article-additional">
+                        <div class="author-info">
+                            <img src="/assets/Icon_V2_Transparent.png" class="author-icon">
+                            <p class="author-name"><%= published.author %></p>
+                        </div>
+                    
+                        <div class="date-likes">
+                            <p class="article-date"><%= published.publish_date %></p>
+                            <div class="article-likes">
+                                <img src="/assets/heart.png" class="heart-icon">
+                                <p class="likes"><%= published.likes %></p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div></a>
+        <% }) %>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 <%= blog.author %>. All rights reserved.</p>
+        <p>Terms of Service | Privacy Policy | Contact Us</p>
+    </footer>
+</body>
+</html>

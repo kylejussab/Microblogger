@@ -1,0 +1,348 @@
+.back-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 1.25rem;
+    margin-left: 1.25rem;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.hero-subtitle-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+.hero-line {
+    width: 15.625rem;
+    margin-left: 25.4rem;
+}
+
+.hero-subtitle {
+    margin-block: 0;
+    margin-left: auto;
+}
+
+.hero-author {
+    font-size: 0.75rem;
+    margin-top: -0.1875rem;
+    font-style: italic;
+    margin-left: auto;
+}
+
+.hero-image {
+    width: 25rem;
+}
+
+.main-heading {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 0.0625rem;
+    line-height: 1;
+    font-size: 4.375rem;
+    margin-block: 0;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-container {
+    background-color: rgba(0, 60, 95, 1);
+    color: rgba(150, 150, 150, 1);
+    width: 45rem;
+    box-shadow: 0.9375rem 1.25rem 1.25rem rgb(0 0 0 / 0.2);
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.title-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    padding-inline: 2.5rem;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3125rem;
+}
+
+.author-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
+.author-name {
+    font-size: 0.875rem;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 0.625rem;
+    text-align: right;
+}
+
+.article-subtitle {
+    font-size: 0.75rem;
+    margin-top: 0;
+    font-style: italic;
+    text-align: right;
+}
+
+.heading-separator {
+    width: 40rem;
+    margin-bottom: 1.875rem;
+}
+
+.article-body {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    padding-inline: 2.5rem;
+    text-align: justify;
+}
+
+.article-body p:last-child {
+    margin-bottom: 1.875rem;
+}
+
+.date-likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2.5rem;
+    font-size: 0.75rem;
+    margin-top: 0;
+}
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3125rem;
+}
+
+.heart-icon {
+    width: 0.9375rem;
+    height: 0.9375rem;
+}
+
+.heart-icon:hover {
+    cursor: pointer;
+}
+
+textarea {
+    width: 40rem;
+    height: 3.125rem;
+    margin-left: 2.5rem;
+    margin-bottom: 3.75rem;
+}
+
+button {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 1.25rem;
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3125rem;
+    padding-inline: 2.5rem;
+    padding-top: 0.625rem;
+}
+
+.comment-icon {
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.comment-name {
+    font-size: 0.75rem;
+}
+
+.comment {
+    background-color: rgba(0, 60, 95, 1);
+    color: rgba(150, 150, 150, 1);
+    width: 45rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0.9375rem 1.25rem 1.25rem rgb(0 0 0 / 0.2);
+}
+
+.comment-body {
+    padding-inline: 2.5rem;
+    font-size: 0.875rem;
+}
+
+.comment-date {
+    padding-inline: 2.5rem;
+    font-size: 0.625rem;
+    padding-bottom: 1.25rem;
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    background-color: #FF9494;
+    color: #cc0000;
+    width: 40rem;
+    border: 0.9375rem solid #cc0000;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-align: center;
+    padding-block: 0.3125rem;
+    margin-bottom: 0.625rem;
+}
+
+/* Media queries */
+@media (max-width: 768px){
+    .back-button {
+        margin-top: 0;
+        margin-bottom: 1.875rem;
+        margin-left: 1.875rem;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-line {
+        width: 15.625rem;
+        margin-left: 3.125rem;
+    }
+
+    .hero-subtitle-container {
+        margin-top: 0.9375rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.875rem;
+    }
+
+    .hero-author {
+        font-size: 0.625rem;
+    }
+
+    .main-heading {
+        font-size: 1.875rem;
+    }
+    
+    .hero-image {
+        width: 15.625rem;
+    }
+
+    .post-container {
+        width: 18.75rem;
+    }
+
+    .title-author {
+        margin-top: 0.625rem;
+        padding-inline: 0.9375rem;
+    }
+
+    .author-icon {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+    
+    .author-name {
+        font-size: 0.625rem;
+    }
+    
+    .article-title {
+        font-size: 1rem;
+        margin-bottom: 0;
+        margin-top: 0.625rem;
+        text-align: right;
+    }
+    
+    .article-subtitle {
+        font-size: 0.6875rem;
+        margin-top: 0;
+        font-style: italic;
+        text-align: right;
+    }
+
+    .date-likes {
+        padding-inline: 0.9375rem;
+        font-size: 0.625rem;
+    }
+
+    .heading-separator {
+        width: 17.5rem;
+    }
+
+    .article-body {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        padding-inline: 0.9375rem;
+    }
+
+    textarea {
+        width: 16.875rem;
+        height: 6.25rem;
+        margin-left: 0.9375rem;
+    }
+
+    .error {
+        width: 16.875rem;
+        font-size: 0.75rem;
+    }
+
+    button {
+        right: 0.9375rem;
+    }
+
+    .comment {
+        width: 18.75rem;
+        margin-bottom: 1.875rem;
+    }
+
+    .comment-info {
+        padding-inline: 1.25rem;
+    }
+
+    .comment-name {
+        font-size: 0.625rem;
+    }
+
+    .comment-body {
+        padding-inline: 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .comment-date {
+        padding-inline: 1.25rem;
+    }
+}

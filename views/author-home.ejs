@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/css/author-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="/scripts/nav-button.js" defer></script>
+    <script src="/scripts/alerts.js" defer></script>
+    <title>Microblogger: Author Homepage</title>
+</head>
+
+<body>
+    <nav>
+        <p class="microblogger">Microblogger: Author Homepage</p>
+        <img src="/assets/menu.png" class="menu-icon">
+
+        <div class="burger-menu hide-on-start" id="burger-menu">
+            <ul class="burger-list">
+                <li><a href="/author" class="nav-link">Author Home</a></li>
+            </ul>
+        </div>
+    </nav>
+  
+    <div class="second-nav">
+        <a href="/"><img src="/assets/arrow.png" class="back-button"></a>
+        <a href="/author/settings"><img src="/assets/settings.png" class="settings-button"></a>
+    </div>
+    
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1 class="main-heading"><%= blog.title %></h1>
+            <div class="hero-subtitle-container">
+                <p class="hero-subtitle"><%= blog.subtitle %></p>
+                <hr class="hero-line">
+                <p class="hero-author">A blog by <%= blog.author %></p>
+            </div>
+        </div>
+        
+        <img src="/assets/hero-image.png" class="hero-image" alt="Image of a hand holding a controller">
+    </div>
+  
+    <h3 class="table-heading">Draft Articles</h3>
+
+    <div class="table-container">
+        <table class="drafts">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Author</th>
+            <th>Create Date</th>
+            <th>Last Modified</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% drafts.forEach(function(draft) { %>
+            <tr>
+                <td><%= draft.title %></td>
+                <td><%= draft.subtitle %></td>
+                <td><%= draft.author %></td>
+                <td><%= draft.create_date %></td>
+                <td><%= draft.last_modified %></td>
+                <td class="actions">
+                <a href="/author/edit/<%= draft.id %>"><button>Edit</button></a>
+                <button onclick="confirmPublish('<%= draft.id %>')">Publish</button>
+                <button onclick="confirmDraftDelete('<%= draft.id %>')">Delete</button>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+        </table>
+    </div>
+  
+    <div class="create-new">
+        <a href="/author/new"><button>Create New Draft</button></a>
+    </div>
+  
+    <h3 class="table-heading">Published Articles</h3>
+
+    <div class="table-container">
+        <table class="published">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Author</th>
+            <th>Create Date</th>
+            <th>Publish Date</th>
+            <th>Likes</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% published.forEach(function(published) { %>
+            <tr>
+                <td><%= published.title %></td>
+                <td><%= published.subtitle %></td>
+                <td><%= published.author %></td>
+                <td><%= published.create_date %></td>
+                <td><%= published.publish_date %></td>
+                <td><%= published.likes %></td>
+                <td class="actions">
+                <button onclick="shareAlert('<%= published.id %>')">Share</button>
+                <button onclick="confirmPublishDelete('<%= published.id %>')">Delete</button>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+        </table>
+    </div>
+  
+    <footer>
+        <p>&copy; 2023 <%= blog.author %>. All rights reserved.</p>
+        <p>Terms of Service | Privacy Policy | Contact Us</p>
+    </footer>
+</body>
+</html>

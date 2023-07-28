@@ -1,0 +1,175 @@
+.second-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    margin-inline: 1.25rem;
+}
+
+.back-button {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.back-button:hover,
+.settings-button:hover {
+    cursor: pointer;
+}
+
+.settings-button {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.hero-container {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.hero-subtitle-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+.hero-line {
+    width: 15.6rem;
+    margin-left: 25.2rem;
+}
+
+.hero-subtitle {
+    margin-block: 0;
+    margin-left: auto;
+}
+
+.hero-author {
+    font-size: 0.75rem;
+    margin-top: -0.2rem;
+    font-style: italic;
+    margin-left: auto;
+}
+
+.hero-image {
+    width: 25rem;
+}
+
+.main-heading {
+    font-size: 4.4rem;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 1.25rem;
+}
+
+th, td {
+    padding: 0.75rem 0.9rem;
+}
+
+.drafts td:nth-child(n+4),
+.drafts th:nth-child(n+4) {
+    text-align: center;
+}
+
+.published td:nth-child(n+4),
+.published th:nth-child(n+4) {
+    text-align: center;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+table thead tr {
+    background-color: rgba(0, 60, 95, 1);
+    color: white;
+    text-align: left;
+}
+
+table tbody tr {
+    border-bottom: 0.0625rem solid rgba(0, 60, 95, 1);
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 0.125rem solid rgba(0, 60, 95, 1);
+}
+
+.table-heading {
+    margin-left: 7.8rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.create-new {
+    display: flex;
+    justify-content: center;
+}
+
+/* Media queries */
+@media (max-width: 768px){
+    .second-nav {
+        margin-top: 0;
+        margin-bottom: 1.875rem;
+        margin-inline: 1.875rem;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-line {
+        width: 15.625rem;
+        margin-left: 3.125rem;
+    }
+
+    .hero-subtitle-container {
+        margin-top: 0.94rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.875rem;
+    }
+
+    .hero-author {
+        font-size: 0.625rem;
+    }
+
+    .main-heading {
+        font-size: 1.875rem;
+    }
+    
+    .hero-image {
+        width: 15.625rem;
+    }
+
+    table td:nth-child(2),
+    table th:nth-child(2),
+    table td:nth-child(3),
+    table th:nth-child(3),
+    table td:nth-child(4),
+    table th:nth-child(4),
+    table td:nth-child(5),
+    table th:nth-child(5){
+        display: none;
+    }
+
+    td {
+        font-size: 0.75rem;
+    }
+
+    .table-heading {
+        margin-left: 1.25rem;
+        font-size: 1.25rem;
+    }
+}
